@@ -1,3 +1,3 @@
-Metainformação: Título, 04/02/2026, (a107319, Pedro Filipe Penha Morais, ![Imagem](../Pedro.jpg)), Engenharia Web
+Metainformação: Título, Data: 04/02/2026, Autor: (a107319, Pedro Filipe Penha Morais, ![Imagem](../Pedro.jpg)), UC: Engenharia Web
 Resumo: Lista de parágrafos;
 Lista de resultados: ficheiros.
