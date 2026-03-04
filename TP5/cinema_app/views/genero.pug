@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .w3-container
+    h2 Género: #{genero.nome}
+    .w3-card-4.w3-margin
+      header.w3-container.w3-teal
+        h3 Detalhes do Género
+      .w3-container.w3-padding
+        p 
+          b ID: 
+          span= genero.id
+        p 
+          b Filmes deste género:
+          ul
+            if genero.filmes
+              each f in genero.filmes
+                li 
+                  a(href=`/filmes/${f.id}`)= f.title
+            else
+              li Nenhum filme encontrado.
+      footer.w3-container.w3-teal.w3-padding-16
+        .w3-center
+          a.w3-button.w3-white.w3-border.w3-round-large(href="/generos") 
+            b Voltar

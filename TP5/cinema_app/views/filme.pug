@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .w3-container
+    h2= filme.title
+    .w3-card-4.w3-margin
+      header.w3-container.w3-teal
+        h3 Detalhes do Filme
+      .w3-container.w3-padding
+        p 
+          b ID: 
+          span= filme.id
+        p 
+          b Ano: 
+          span= filme.year
+        p 
+          b Atores:
+          ul
+            if filme.cast
+              each ator in filme.cast
+                li= ator
+            else
+              li Sem informação de atores.
+        p 
+          b Géneros:
+          ul
+            if filme.genres
+              each gen in filme.genres
+                li= gen
+            else
+              li Sem informação de géneros.
+      footer.w3-container.w3-teal.w3-padding-16
+        .w3-center
+          a.w3-button.w3-white.w3-border.w3-round-large(href="/filmes") 
+            b Voltar

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .w3-container
+    h2 Lista de Géneros
+    table.w3-table-all.w3-hoverable
+      thead
+        tr.w3-teal
+          th Género
+          th Nº de Filmes
+      tbody
+        each gen in generos
+          tr(onclick=`window.location.href='/generos/${gen.id}'` style="cursor:pointer")
+            td= gen.nome
+            td= gen.numFilmes
