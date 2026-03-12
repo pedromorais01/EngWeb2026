@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .w3-container.w3-margin
+    .w3-card-4
+      header.w3-container.w3-teal
+        h2= movie.title
+      .w3-container
+        p 
+          b ID: 
+          span= movie._id
+        p 
+          b Ano: 
+          span= movie.year
+        if movie.cast && movie.cast.length > 0
+          h3 Elenco
+          ul.w3-ul
+            each actor in movie.cast
+              li
+                a(href="/atores/" + actor._id)= actor.name
+        if movie.genres && movie.genres.length > 0
+          h3 Géneros
+          ul.w3-ul
+            each genre in movie.genres
+              li
+                a(href="/generos/" + genre._id)= genre.name
+      footer.w3-container.w3-teal.w3-margin-top
+        address
+          a(href="/filmes") Voltar à lista

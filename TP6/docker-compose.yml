@@ -1,0 +1,40 @@
+services:
+  mongodb:
+    build:
+      context: ./api_dados
+      dockerfile: Dockerfile.mongo
+    container_name: mongodb
+    networks:
+      - cinema-network
+
+  api_dados:
+    build: 
+      context: ./api_dados
+      dockerfile: Dockerfile
+    container_name: api_dados
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/cinema
+    depends_on:
+      - mongodb
+    ports:
+      - "7789:7789"
+    networks:
+      - cinema-network
+
+  interface:
+    build:
+      context: ./interface
+      dockerfile: Dockerfile.interface
+    container_name: interface
+    ports:
+      - "7790:7790"
+    environment:
+      - API_URL=http://api_dados:7789
+    depends_on:
+      - api_dados
+    networks:
+      - cinema-network
+
+networks:
+  cinema-network:
+    driver: bridge

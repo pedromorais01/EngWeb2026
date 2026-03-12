@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .w3-container
+    h2 Lista de Géneros (#{list.length})
+    table.w3-table-all
+      tr.w3-teal
+        th Id
+        th Designação
+        th # Filmes
+      each g in list
+        tr
+          td= g._id
+          td
+            a(href="/generos/" + g._id)= g.name
+          td= g.movies ? g.movies.length : 0
