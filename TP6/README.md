@@ -1,8 +1,8 @@
 # Título
-TPC6: Orquestração de Micro-serviços para Cinema Americano
+TPC6: uma App sobre cinema americano
 
 # Data
-11/03/2026
+12/03/2026
 
 # Autor
 a107319, Pedro Filipe Penha Morais, ![Imagem](../Pedro.jpg)
