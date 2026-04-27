@@ -31,14 +31,10 @@ Para testar a plataforma com dados reais (utilizadores, recursos de UCs da UMinh
 ### Opção A: Povoamento Completo (Recomendado)
 Este script limpa a base de dados e carrega o cenário completo de demonstração.
 
-1. Entra no contentor da API:
-   ```bash
-   docker exec -it api_dados sh
-   ```
-2. Executa o script de povoamento:
-   ```bash
-   node scripts/populate_complete.js
-   ```
+Corre este comando:
+```bash
+docker exec -it projeto_api_dados sh -c "MONGO_URI=mongodb://mongodb:27017/projetoEW node scripts/populate_complete.js"
+```
 
 ### Opção B: Apenas utilizador Administrador
 Se preferires começar do zero mas precisares de uma conta de admin:
