@@ -19,8 +19,6 @@ services:
     volumes:
       - ./api_dados:/usr/src/app
       - /usr/src/app/node_modules
-      - /usr/src/app/uploads
-      - /usr/src/app/storage
 
   interface:
     build: ./interface
@@ -35,4 +33,3 @@ services:
     volumes:
       - ./interface:/usr/src/app
       - /usr/src/app/node_modules
-      - /usr/src/app/uploads
